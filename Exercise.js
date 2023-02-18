@@ -1,5 +1,7 @@
 const order = {};
 
-if (order.customer.address.city == false) {
+const ordercity = order.customer.address?.city;
+
+if (order.customer.address.city === false) {
   console.log('City is required');
 }
