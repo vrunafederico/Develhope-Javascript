@@ -1,10 +1,13 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
+class Person {
+  constructor(id, firstName, lastName, age) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
 }
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+const developer = new Person(1, 'Mario', 'Rossi', 25);
+console.log(JSON.stringify(developer))
+
+// Print developer as JSON object
