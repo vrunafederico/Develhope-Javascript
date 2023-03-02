@@ -1,10 +1,21 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
-}
+const person1 = {
+  id: 1,
+  firstName: 'Mario',
+  lastName: 'Rossi',
+  age: 25,
+  address: {
+    state: 'Italy',
+    city: 'Rome',
+    street: 'Via Romano, 12'
+  }
+};
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+// const person2 = { ...person1 };
+
+let string = JSON.stringify(person1);
+let person2 = JSON.parse(string);
+
+person2.address.city = 'Milan';
+
+console.log(person1);
+console.log(person2);
