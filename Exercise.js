@@ -1,10 +1,22 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
+class Person {
+  constructor(id, firstName, lastName, age) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  toJson() {
+    return JSON.stringify(this);
+  }
+
+  static fromJson(json){
+    return JSON.parse(json);
+  }
+
 }
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+const json = '{"id":1,"firstName":"Mario","lastName":"Rossi","age":25}';
+const developer = Person.fromJson(json);
+console.log(developer);
+
