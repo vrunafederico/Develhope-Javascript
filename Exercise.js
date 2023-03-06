@@ -1,10 +1,13 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
-}
+const number = 15;
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+const myPromise = (number) => new Promise((resolve, reject) => {
+    if(number > 10){ 
+      resolve("it's greater than 10") 
+    }else{
+      reject("it's not greater than 10");
+    }
+});
+
+myPromise(number)
+  .then((result) => console.log(result))
+  .catch((result) => console.log(result));
