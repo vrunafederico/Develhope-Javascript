@@ -13,16 +13,4 @@ Control(isLogged)
         .then((val) => console.log(val))
         .catch((err) => console.log(err)))
     .catch((err) => console.log(err))
-
-
-async function Check(isLogged){
-    try{ 
-        let val = await Control(isLogged);
-        let check = await Control2(val);
-        console.log(check);
-    }catch(err){
-        console.log(err)
-    }
-} 
    
-Check(isLogged);
