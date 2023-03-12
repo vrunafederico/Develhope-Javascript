@@ -11,8 +11,8 @@ let Control2 = (Number) => {return new Promise((resolve, reject) => {
 Control(isLogged)
     .then((val) => Control2(val)
         .then((val) => console.log(val))
-        .catch((err) => console.log(err)))
-    .catch((err) => console.log(err))
+        .catch((err) => console.error(err)))
+    .catch((err) => console.error(err))
 
 
 async function Check(isLogged){
@@ -21,8 +21,11 @@ async function Check(isLogged){
         let check = await Control2(val);
         console.log(check);
     }catch(err){
-        console.log(err)
+        console.error(err)
+    }finally{
+        console.log("Terminated")
     }
+
 } 
    
 Check(isLogged);
