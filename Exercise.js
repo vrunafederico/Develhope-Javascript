@@ -1,10 +1,20 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
+
+function sendData(){
+  let text = document.getElementById('title');
+  let checkbox = document.getElementById('checkbox');
+  let button = document.getElementById('button');
+  
+  button.addEventListener("click", async () =>{
+    const rawResponse = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({title: text.value, Flag: checkbox.checked})
+    });
+    const content = await rawResponse.json();
+    console.log(content);
+  })  
 }
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+window.onload = sendData();
