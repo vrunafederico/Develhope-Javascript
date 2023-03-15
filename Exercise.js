@@ -9,3 +9,10 @@ const value = JSON.stringify(`${user.name} - ${user.age}`);
 
 localStorage.setItem(id, value );
 
+
+function getElement(id){
+  const element =  localStorage.getItem(id);
+  return element;
+} 
+
+console.log(getElement("1"));
