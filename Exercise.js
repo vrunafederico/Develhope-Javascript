@@ -1,10 +1,11 @@
-function sum(numbers) {
-  let sum = 0;
-  console.log(numbers)
-  numbers.forEach(element => console.log(element));
-  console.log(sum)
-  return sum;
-}
+const user = {
+  id: 1,
+  name: "John",
+  age: 25,
+};
 
-const numbers = [1, 2, 3];
-console.log(sum(numbers));
+const id = JSON.stringify(user.id);
+const value = JSON.stringify(`${user.name} - ${user.age}`);
+
+localStorage.setItem(id, value );
+
